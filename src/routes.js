@@ -5,7 +5,8 @@ import MainDashboard from "views/admin/default";
 import NFTMarketplace from "views/admin/marketplace";
 import Profile from "views/admin/profile";
 import DataTables from "views/admin/tables";
-import RTLDefault from "views/rtl/default";
+import Integrations from "views/integrations";
+import CreateIntegrations from "views/integrations/create";
 
 // Auth Imports
 import SignIn from "views/auth/SignIn";
@@ -18,6 +19,7 @@ import {
   MdPerson,
   MdLock,
 } from "react-icons/md";
+import CreateJiraIntegration from "views/integrations/create/jira";
 
 const routes = [
   {
@@ -57,11 +59,25 @@ const routes = [
     component: <SignIn />,
   },
   {
-    name: "RTL Admin",
-    layout: "/rtl",
-    path: "rtl",
+    name: "Integrations",
+    layout: "/admin",
+    path: "integrations",
     icon: <MdHome className="h-6 w-6" />,
-    component: <RTLDefault />,
+    component: <Integrations />,
+  },
+  {
+    name: "Create Integrations",
+    layout: "/admin",
+    path: "integrations/create",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <CreateIntegrations />,
+  },
+  {
+    name: "Create JIRA Integrations",
+    layout: "/admin",
+    path: "integrations/create/jira",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <CreateJiraIntegration />,
   },
 ];
 export default routes;
